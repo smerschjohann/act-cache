@@ -5,9 +5,6 @@ go 1.20
 require (
 	github.com/go-chi/chi/v5 v5.0.8
 	github.com/go-chi/render v1.0.2
-	github.com/gorilla/mux v1.8.0
-	github.com/jmoiron/sqlx v1.3.5
-	github.com/mattn/go-sqlite3 v1.14.16
 	github.com/sirupsen/logrus v1.9.0
 	modernc.org/sqlite v1.22.0
 	xorm.io/builder v0.3.12

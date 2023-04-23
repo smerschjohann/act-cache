@@ -11,7 +11,15 @@ import (
 	cache "github.com/smerschjohann/act-cache/artifactcache"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 func main() {
+	log.Printf("act-cache %s, commit %s, built at %s", version, commit, date)
+
 	err := godotenv.Load(".actcacherc")
 	if err != nil && !errors.Is(err, os.ErrNotExist) {
 		log.Fatal("Error loading .actcacherc file")
