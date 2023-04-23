@@ -9,28 +9,31 @@ Either download a prebuilt release from the Release page or build using `go buil
 ## usage
 
 ### Act config
+
 We need to let act to know the Cache Server URL and use which token. There are two ways to do so (choose one).
 
 1. Ensure you add the following configuration to your `~/.actrc` file:
+
 ```
 --env ACTIONS_CACHE_URL=http://localhost:8111/
 --env ACTIONS_RUNTIME_URL=http://localhost:8111/
 
 # run act cache
-act_cache > cache.log &
+act-cache > cache.log 2>&1 &
 
 # just run act
 act {event}
 ```
 
-2. Run act with env file (for example, put the file in project root) 
+2. Run act with env file (for example, put the file in project root)
+
 ```
 # ./act/cache.env
-ACTIONS_CACHE_URL=http://localhost:8080/
-ACTIONS_RUNTIME_URL=http://localhost:8080/
+ACTIONS_CACHE_URL=http://localhost:8111/
+ACTIONS_RUNTIME_URL=http://localhost:8111/
 
 # run act cache
-act_cache > cache.log &
+act-cache > cache.log 2>&1 &
 
 # run act with .env file
 act {event} --env-file act/cache.env
